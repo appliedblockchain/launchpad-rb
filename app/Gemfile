@@ -1,5 +1,11 @@
 source "http://rubygems.org"
 
+gem "roda"
+
 gem 'ethereum.rb'
 
 gem "rake"
+
+gem "dm"
+
+gem "psql-adapter"
