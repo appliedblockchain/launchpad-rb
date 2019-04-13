@@ -9,3 +9,5 @@ puts "new contract: #{address}"
   value = contract.call.get
   puts "got value: #{value}"
 end
+
+# TODO: add RODA

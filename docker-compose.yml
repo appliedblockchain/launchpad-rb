@@ -1,0 +1,16 @@
+version: "3.6"
+
+services:
+  launchpad-rb:
+    image: appliedblockchain/launchpad-rb
+    hostname: launchpad-rb
+    ports:
+      - 3000:3000
+    environment: []
+
+  # parity1:
+  # parity2:
+  # parity3:
+
+# get the parity setup from launchpad:
+# https://github.com/appliedblockchain/launchpad/blob/master/docker-compose.yml
