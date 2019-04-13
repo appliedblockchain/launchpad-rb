@@ -8,7 +8,9 @@ class App < Roda
   plugin :not_found
 
   route do |r|
-    r.get "items", ResourceRoute
+    r.root &RootRoute.(r)
+
+    r.get "posts", ResourceRoute
   end
 
 end

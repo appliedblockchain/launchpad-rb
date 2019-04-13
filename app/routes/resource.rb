@@ -1,7 +1,7 @@
 module Routes
 
   ResourceRoute = -> {
-    contract = Ethereum::Contract.create file: "store.sol", client: CLIENT
+    contract = Ethereum::Contract.create file: "store.sol", client: ETH
     address = contract.deploy_and_wait
     puts "new contract: #{address}"
 
@@ -11,7 +11,13 @@ module Routes
       puts "got value: #{value}"
     end
 
-    # TODO: add RODA
+    Post.create! title: "post-#{rand 1000}", text: "..."
+
+    {
+      status: "ok",
+      posts: Post.count,
+      store: { value: value },
+    }.to_json
   }
 
 end

@@ -8,9 +8,9 @@ gem 'ethereum.rb'
 
 gem "rake"
 
-gem "dm-core"
-
-gem "dm-postgres-adapter"
 gem "pg"
+gem "dm-core"
+gem "dm-migrations"
+gem "dm-postgres-adapter"
 
 gem "puma"
