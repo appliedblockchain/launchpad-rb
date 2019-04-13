@@ -2,6 +2,27 @@
 
 status: WIP
 
+### Application Stack
+
+- ruby
+- roda
+- parity
+- launchpad swarm setup
+- postgres
+
+### Modules
+
+- search (dm ferret or elasticsearch)
+- datamapper to datamapper2 (ROM)
+- op_return integration and explorer
+
+### SOON
+
+- ipfs
+- tendermint
+
+
+
 #### https://github.com/makevoid/launchpad-rb/blob/master/stack/app/try-eth-rb.rb
 
 ### Step 1) Setup
