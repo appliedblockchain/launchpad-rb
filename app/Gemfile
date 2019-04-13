@@ -1,16 +1,31 @@
 source "http://rubygems.org"
 
-gem "roda"
-
+# base
+gem "rake"
 gem "digest-sha3", git: "https://github.com/izetex/digest-sha3-ruby"
-
 gem 'ethereum.rb'
 
-gem "rake"
+# web
+gem "roda"
 
+# database
 gem "pg"
 gem "dm-core"
 gem "dm-migrations"
 gem "dm-postgres-adapter"
 
+# server
 gem "puma"
+
+# # lib / tools:
+#
+#     gem "nokogiri" # ultra dev friendly HTML/XML parser based on libxml2
+#     gem "haml" # best view engine - simplifies apps greatly
+#     gem "dry-inflector" # inflector
+#
+# # db:
+# 
+#     gem "dm-validations"
+#     gem "dm-mysql-adapter"
+#     gem "dm-sqlite-adapter"
+#     gem "dm-migrations"
