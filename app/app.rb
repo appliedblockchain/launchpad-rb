@@ -10,7 +10,7 @@ class App < Roda
   route do |r|
     r.root &RootRoute.(r)
 
-    r.get "posts", ResourceRoute
+    r.get "posts", &ResourceRoute
   end
 
 end

@@ -1,11 +1,10 @@
 module Routes
 
   ResourceRoute = -> {
-    contract = Ethereum::Contract.create file: "store.sol", client: ETH
-    address = contract.deploy_and_wait
-    puts "new contract: #{address}"
+    contract = CONTRACT
 
-    5.times do
+    value = ""
+    3.times do
       contract.transact.set "rand-#{rand 10}"
       value = contract.call.get
       puts "got value: #{value}"

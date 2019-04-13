@@ -3,6 +3,9 @@ version: "3.6"
 networks:
   main:
 
+volumes:
+  parity:
+
 services:
   launchpad-rb:
     build:
@@ -13,6 +16,7 @@ services:
       - 3000:3000
     environment: []
     depends_on:
+      - parity
       - postgres
     networks:
       - main
@@ -22,13 +26,17 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=foobar
     image: postgres
-    restart: unless-stopped
     networks:
       - main
+    restart: unless-stopped
 
-  # parity1:
-  # parity2:
-  # parity3:
+  parity:
+    image: appliedblockchain/parity-solo-instant
+    volumes:
+      - parity:/solo/chains
+    networks:
+      - main
+    restart: unless-stopped
 
-# get the parity setup from launchpad:
+# get the parity setup from launchpad for non dev chains:
 # https://github.com/appliedblockchain/launchpad/blob/master/docker-compose.yml

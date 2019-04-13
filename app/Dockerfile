@@ -13,11 +13,11 @@ RUN apt install -y build-essential postgresql-server-dev-9.6
 FROM ruby as ruby-run
 
 RUN apt update -y
-RUN apt install -y software-properties-common libpq-dev
+RUN apt install -y software-properties-common libpq-dev curl
 
 RUN gem i bundler --no-ri --no-rdoc
 
-ADD https://github.com/ethereum/solidity/releases/download/v0.5.7/solc-static-linux /usr/bin/solc
+RUN curl -L https://github.com/ethereum/solidity/releases/download/v0.5.7/solc-static-linux -o /usr/bin/solc
 
 RUN chmod 755 /usr/bin/solc
 
@@ -44,6 +44,7 @@ FROM ruby-run
 
 COPY --from=builder /app /app
 
+ENV DOCKER 1
 ENV RACK_ENV production
 
 WORKDIR /app
