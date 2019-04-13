@@ -1,14 +1,13 @@
 require_relative 'env'
 
-# HELLO WORLD
-ResourceRoute.()
+include Routes
 
 class App < Roda
   plugin :json
-  plugin :error
+  plugin :error_handler
   plugin :not_found
 
-  routes do |r|
+  route do |r|
     r.get "items", ResourceRoute
   end
 

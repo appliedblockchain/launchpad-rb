@@ -1,7 +1,6 @@
 module Routes
 
-  ResourceRoute.() = -> {
-
+  ResourceRoute = -> {
     contract = Ethereum::Contract.create file: "store.sol", client: CLIENT
     address = contract.deploy_and_wait
     puts "new contract: #{address}"

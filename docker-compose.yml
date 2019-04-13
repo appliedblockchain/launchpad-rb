@@ -1,12 +1,30 @@
 version: "3.6"
 
+networks:
+  main:
+
 services:
   launchpad-rb:
+    build:
+      context: app
     image: appliedblockchain/launchpad-rb
     hostname: launchpad-rb
     ports:
       - 3000:3000
     environment: []
+    depends_on:
+      - postgres
+    networks:
+      - main
+
+  postgres:
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=foobar
+    image: postgres
+    restart: unless-stopped
+    networks:
+      - main
 
   # parity1:
   # parity2:

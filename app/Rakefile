@@ -1,6 +1,6 @@
 desc "run"
 task :run do
-  ruby "try-eth-rb.rb"
+  sh "bundle exec rackup"
 end
 
 task default: :run

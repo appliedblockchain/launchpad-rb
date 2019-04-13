@@ -2,10 +2,15 @@ source "http://rubygems.org"
 
 gem "roda"
 
+gem "digest-sha3", git: "https://github.com/izetex/digest-sha3-ruby"
+
 gem 'ethereum.rb'
 
 gem "rake"
 
-gem "dm"
+gem "dm-core"
 
-gem "psql-adapter"
+gem "dm-postgres-adapter"
+gem "pg"
+
+gem "puma"
