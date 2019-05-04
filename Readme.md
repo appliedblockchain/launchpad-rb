@@ -10,6 +10,47 @@ status: WIP
 - launchpad swarm setup
 - postgres
 
+### Coding Style
+
+The code style of the project is `RubyJS` (RJS for the most intimates - :D)
+
+The core principles are:
+
+- use arrow functions (lambdas)
+- use exports
+- use brackets ( `()` and `.()` ) when defining and calling methods
+- use modules not classes
+- use `{}` instead of where you commonly use the `do` -- `end` coding style commonly used for multiline blocks
+
+```ruby
+function -> { } 
+```
+
+```ruby
+module Something
+  SomeFunction = -> {
+    # ...
+  }
+end
+
+Exports.default = Something
+```
+
+```ruby
+function -> { } 
+```
+
+And remember to use RSpec and request specs
+
+```ruby
+Rspec.describe do |r|
+  r.specify("") {
+    value.should == '123'
+    # get("/"); body.should =~ /antani/
+  }
+end
+```
+
 ### Modules
 
 - search (dm ferret or elasticsearch)
