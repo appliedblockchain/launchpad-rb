@@ -36,9 +36,8 @@ end
 Exports.default = Something
 ```
 
-```ruby
-function -> { } 
-```
+see more infos about RJS: https://github.com/makevoid/rjs
+
 
 And remember to use RSpec and request specs
 
