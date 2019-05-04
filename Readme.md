@@ -46,7 +46,7 @@ And remember to use RSpec and request specs
 Rspec.describe do |r|
   r.specify("") {
     value.should == '123'
-    # get("/"); body.should =~ /antani/
+    # get("/"); body.should =~ /foobar/
   }
 end
 ```
