@@ -7,7 +7,7 @@ RUN apt install -y ruby-dev git
 FROM ruby as ruby-build
 
 RUN apt update -y
-RUN apt install -y build-essential postgresql-server-dev-9.6
+RUN apt install -y build-essential postgresql-server-dev-11
 
 
 FROM ruby as ruby-run

@@ -1,6 +1,6 @@
 desc "run"
 task :run do
-  sh "bundle exec rackup"
+  sh "bundle exec rackup -p 3000"
 end
 
 task default: :run
