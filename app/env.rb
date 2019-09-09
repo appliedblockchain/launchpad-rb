@@ -18,7 +18,9 @@ puts "new contract: #{address}"
 
 # DB
 
-DataMapper.setup :default, "postgres://postgres:foobar@postgres"
+DB_HOST = DOCKER ? "postgres" : "localhost"
+
+DataMapper.setup :default, "postgres://postgres:foobar@#{DB_HOST}"
 
 require_relative 'models/post'
 

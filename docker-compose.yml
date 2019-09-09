@@ -26,6 +26,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=foobar
     image: postgres
+    ports:
+      - 5432:5432
     networks:
       - main
     restart: unless-stopped
